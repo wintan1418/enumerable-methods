@@ -13,9 +13,25 @@ module Enumerable
     end
 end
 
-test_collect = [1, 10, 100, 1000, 10000, 100000]
+test_collect = ["goond","young", "lappy", "shangai"]
 
 
 test_collect.my_each do |el|
-    puts "The test array contains the number #{el}"
+    puts "The test array contains the nonsense #{el}"
+
+    
 end
+
+def my_each_with_index
+  return self.dup unless block_given?
+  i = 0 
+  untill i == self.size
+  yield self[i]
+  i +=1
+end
+end
+test_collect = [23,34,56,78,45]
+ test_collect.my_each_with_index  { |el,index| puts "index: #{index} for #{el}" }
+end
+
+
